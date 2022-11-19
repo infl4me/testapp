@@ -3,8 +3,11 @@
 # config valid for current version and patch releases of Capistrano
 lock '~> 3.17.1'
 
-set :application, 'my_app_name'
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :application, 'testapp'
+# set :repo_url, 'git@example.com:me/my_repo.git'
+
+set :rvm_ruby_version, 'ruby-2.7.6'
+set :default_env, { rvm_bin_path: '/usr/share/rvm/bin/rvm' }
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

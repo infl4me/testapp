@@ -66,6 +66,8 @@ group :development do
   # gem 'spring'
   gem 'capistrano', '~> 3.17.1', require: false
   gem 'capistrano-rails', '~> 1.6.2', require: false
+  gem 'capistrano-rvm'
+  gem 'capistrano-secrets-yml'
 
   gem 'rubocop', '~> 1.39'
   gem 'rubocop-rails'
