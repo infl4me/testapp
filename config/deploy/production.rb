@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-server 'local-ubuntu-rails', roles: %w[app db web]
+server '127.0.0.1', user: 'vagrant', port: 2222, roles: %w[app db web]
 
 # server-based syntax
 # ======================
@@ -39,11 +39,9 @@ server 'local-ubuntu-rails', roles: %w[app db web]
 #
 # Global options
 # --------------
-#  set :ssh_options, {
-#    keys: %w(/home/user_name/.ssh/id_rsa),
-#    forward_agent: false,
-#    auth_methods: %w(password)
-#  }
+# set :ssh_options, {
+#   port: 2222
+# }
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------

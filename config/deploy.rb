@@ -6,6 +6,8 @@ lock '~> 3.17.1'
 set :application, 'testapp'
 # set :repo_url, 'git@example.com:me/my_repo.git'
 
+set :repo_url, 'git@github.com:infl4me/testapp.git'
+
 set :rvm_ruby_version, 'ruby-2.7.6'
 set :default_env, { rvm_bin_path: '/usr/share/rvm/bin/rvm' }
 
