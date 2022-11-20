@@ -259,6 +259,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   capistrano (~> 3.17.1)
+  capistrano-bundler (~> 2.1)
   capistrano-rails (~> 1.6.2)
   capistrano-rvm
   capistrano-secrets-yml
