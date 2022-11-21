@@ -68,7 +68,6 @@ group :development do
   gem 'capistrano-bundler', '~> 2.1'
   gem 'capistrano-rails', '~> 1.6.2', require: false
   gem 'capistrano-rvm'
-  gem 'capistrano-secrets-yml'
 
   gem 'rubocop', '~> 1.39'
   gem 'rubocop-rails'
