@@ -3,7 +3,7 @@
 rails_env = 'production'
 environment rails_env
 
-app_dir = '/path/to/my/rails-app' # Update me with your root rails app path
+app_dir = '/var/www/testapp/current'
 
 bind "unix://#{app_dir}/puma.sock"
 pidfile "#{app_dir}/puma.pid"
