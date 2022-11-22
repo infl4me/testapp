@@ -45,3 +45,30 @@ set :branch, 'main'
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+
+namespace :puma do
+  desc 'Restart puma'
+  task :restart, roles: :app do
+    run "cd #{current_path} && bundle exec pumactl -S /home/deploy/apps/marytrufel/current/tmp/pids/puma.state -P /home/deploy/apps/marytrufel/current/tmp/pids/puma.pid restart"
+  end
+
+  task :phased_restart, roles: :app do
+    run "cd #{current_path} && /usr/share/rvm/wrappers/ruby-2.7.6/puma -C /var/www/testapp/current/config/puma/production.rb phased-restart"
+  end
+
+  task :stop do
+    run "service puma_#{application} stop"
+  end
+
+  task :start do
+    run "service puma_#{application} start"
+  end
+
+  after 'deploy:restart', 'puma:phased_restart'
+end
+
+after 'deploy:finalize_update', 'deploy:copy_configs'
+after 'deploy:create_symlink', 'deploy:update_version'
+
+# keep only the last 5 releases
+after 'deploy:restart', 'deploy:cleanup'
