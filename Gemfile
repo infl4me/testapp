@@ -68,6 +68,8 @@ group :development do
   gem 'capistrano-bundler', '~> 2.1'
   gem 'capistrano-rails', '~> 1.6.2'
   gem 'capistrano-rvm'
+  gem 'capistrano-secrets-yml', '~> 1.1.0'
+  gem 'capistrano-master-key', '~> 1.0.0'
 
   gem 'rubocop', '~> 1.39'
   gem 'rubocop-rails'

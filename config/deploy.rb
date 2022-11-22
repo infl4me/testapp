@@ -15,6 +15,8 @@ set :default_env, { rvm_bin_path: '/usr/share/rvm/bin/rvm' }
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 set :branch, 'main'
 
+set :master_key_local_path, '/home/udf/projects/testapp/config/master.key'
+
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
 
@@ -65,8 +67,5 @@ namespace :puma do
   after 'deploy:restart', 'puma:phased_restart'
 end
 
-after 'deploy:finalize_update', 'deploy:copy_configs'
-after 'deploy:create_symlink', 'deploy:update_version'
-
 # keep only the last 5 releases
-after 'deploy:restart', 'deploy:cleanup'
+# after 'deploy:restart', 'deploy:cleanup'
