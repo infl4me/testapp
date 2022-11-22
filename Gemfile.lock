@@ -94,10 +94,6 @@ GEM
     capistrano-secrets-yml (1.1.1)
       capistrano (~> 3.10)
       sshkit (~> 1.15)
-    capistrano3-puma (5.2.0)
-      capistrano (~> 3.7)
-      capistrano-bundler
-      puma (>= 4.0, < 6.0)
     capybara (3.38.0)
       addressable
       matrix
@@ -263,7 +259,6 @@ DEPENDENCIES
   capistrano-rails (~> 1.6.2)
   capistrano-rvm
   capistrano-secrets-yml (~> 1.1.0)
-  capistrano3-puma
   capybara
   importmap-rails
   jbuilder

@@ -14,10 +14,10 @@ set :branch, 'main'
 
 set :master_key_local_path, '/home/udf/projects/testapp/config/master.key'
 
-task :puma_restart do
-  on roles(:all) do
-    execute 'kill -SIGUSR1 $(cat /var/www/testapp/shared/puma.pid)'
-  end
-end
+# task :puma_restart do
+#   on roles(:all) do
+#     execute 'kill -SIGUSR1 $(cat /var/www/testapp/shared/puma.pid)'
+#   end
+# end
 
 # after 'deploy:cleanup', :puma_restart

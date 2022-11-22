@@ -70,7 +70,6 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano-secrets-yml', '~> 1.1.0'
   gem 'capistrano-master-key', '~> 1.0.0'
-  gem 'capistrano3-puma'
 
   gem 'rubocop', '~> 1.39'
   gem 'rubocop-rails'
