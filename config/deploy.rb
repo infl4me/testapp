@@ -17,6 +17,8 @@ set :branch, 'main'
 
 set :master_key_local_path, '/home/udf/projects/testapp/config/master.key'
 
+set :puma_enable_socket_service, true
+
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
 
@@ -48,24 +50,25 @@ set :master_key_local_path, '/home/udf/projects/testapp/config/master.key'
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 
-namespace :puma do
-  desc 'Restart puma'
-  # task :restart, roles: :app do
-  #   run "cd #{current_path} && bundle exec pumactl -S /home/deploy/apps/marytrufel/current/tmp/pids/puma.state -P /home/deploy/apps/marytrufel/current/tmp/pids/puma.pid restart"
-  # end
+# namespace :puma do
+#   desc 'Restart puma'
+#   # task :restart, roles: :app do
+#   #   run "cd #{current_path} && bundle exec pumactl -S /home/deploy/apps/marytrufel/current/tmp/pids/puma.state -P /home/deploy/apps/marytrufel/current/tmp/pids/puma.pid restart"
+#   # end
 
-  # task :phased_restart, roles: :app do
-  #   run "cd #{current_path} && /usr/share/rvm/wrappers/ruby-2.7.6/puma -C /var/www/testapp/current/config/puma/production.rb phased-restart"
-  # end
+#   # task :phased_restart, roles: :app do
+#   #   run "cd #{current_path} && /usr/share/rvm/wrappers/ruby-2.7.6/puma -C /var/www/testapp/current/config/puma/production.rb phased-restart"
+#   # end
 
-  task :phased_restart do
-    on roles(:all) do |_host|
-      run "cd #{current_path} && /usr/share/rvm/wrappers/ruby-2.7.6/puma -C /var/www/testapp/current/config/puma/production.rb phased-restart"
-    end
-  end
+#   task :phased_restart do
+#     on roles(:all) do |_host|
+#       run "cd #{current_path} && /usr/share/rvm/wrappers/ruby-2.7.6/puma -C /var/www/testapp/current/config/puma/production.rb phased-restart"
+#     end
+#   end
 
-  after 'deploy:restart', 'puma:phased_restart'
-end
+#   after 'deploy:restart', 'puma:phased_restart'
+# end
+
 
 # keep only the last 5 releases
 # after 'deploy:restart', 'deploy:cleanup'

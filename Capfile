@@ -9,12 +9,15 @@ require 'capistrano/deploy'
 require 'capistrano/secrets_yml'
 require 'capistrano/master_key'
 
+require 'capistrano/rvm'
+
 require 'capistrano/bundler'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 
-require 'capistrano/rvm'
-
+require 'capistrano/puma'
+install_plugin Capistrano::Puma # Default puma tasks
+install_plugin Capistrano::Puma::Systemd
 
 # Load the SCM plugin appropriate to your project:
 #
