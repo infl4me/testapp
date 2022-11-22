@@ -16,6 +16,7 @@ set :master_key_local_path, '/home/udf/projects/testapp/config/master.key'
 
 task :puma_restart do
   on roles(:all) do
+    # Send the puma process the SIGUSR1 signal to trigger phased-restart
     execute 'kill -SIGUSR1 $(cat /var/www/testapp/shared/puma.pid)'
   end
 end
