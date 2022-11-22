@@ -20,4 +20,4 @@ task :puma_restart do
   end
 end
 
-after 'deploy:cleanup', :puma_restart
+# after 'deploy:cleanup', :puma_restart
